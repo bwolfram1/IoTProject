@@ -66,12 +66,13 @@ df4x2 = shuffle(df4x2)
 df4x2 = df4x2.reset_index(drop=True)
 
 #End of 200 segment
-segmented = True 
+segmented = False 
 if segmented == True: 
-    segment = 200
+    segment = 180
     RAW = df4x2.iloc[:,:segment]
     RAW
 else:
+    segment = 200
     RAW = df4x2.iloc[:,:seglen]
 
 ##END OF SLICING ORIGINAL
@@ -258,232 +259,232 @@ print("Precision:",metrics.precision_score(y_test6, y_pred6))
 print("Recall:",metrics.recall_score(y_test6, y_pred6))
 print("F1:",metrics.f1_score(y_test6, y_pred6))
 
-##SVC'
-#Model 1
-#Model 2
-clf = svm.SVC()
-clf.fit(X_train,y_train)
-y_predc = clf.predict(X_test)
+# ##SVC'
+# #Model 1
+# #Model 2
+# clf = svm.SVC()
+# clf.fit(X_train,y_train)
+# y_predc = clf.predict(X_test)
 
-cnf_matrixc = metrics.confusion_matrix(y_test, y_predc)
-print(cnf_matrixc)
-sns.heatmap(cnf_matrixc,annot = True)
-plt.figure()
+# cnf_matrixc = metrics.confusion_matrix(y_test, y_predc)
+# print(cnf_matrixc)
+# sns.heatmap(cnf_matrixc,annot = True)
+# plt.figure()
 
-print("SVC --------")
-print("Accuracy:",metrics.accuracy_score(y_test, y_predc))
-print("Precision:",metrics.precision_score(y_test, y_predc))
-print("Recall:",metrics.recall_score(y_test, y_predc))
-print("F1:",metrics.f1_score(y_test, y_predc))
-#Model 3
-clf = svm.SVC()
-clf.fit(X_train3,y_train3)
-y_predc3 = clf.predict(X_test3)
+# print("SVC --------")
+# print("Accuracy:",metrics.accuracy_score(y_test, y_predc))
+# print("Precision:",metrics.precision_score(y_test, y_predc))
+# print("Recall:",metrics.recall_score(y_test, y_predc))
+# print("F1:",metrics.f1_score(y_test, y_predc))
+# #Model 3
+# clf = svm.SVC()
+# clf.fit(X_train3,y_train3)
+# y_predc3 = clf.predict(X_test3)
 
-cnf_matrixc3 = metrics.confusion_matrix(y_test3, y_predc3)
-print(cnf_matrixc3)
-sns.heatmap(cnf_matrixc3,annot = True)
-plt.figure()
+# cnf_matrixc3 = metrics.confusion_matrix(y_test3, y_predc3)
+# print(cnf_matrixc3)
+# sns.heatmap(cnf_matrixc3,annot = True)
+# plt.figure()
 
-print("SVC --------")
-print("Accuracy:",metrics.accuracy_score(y_test3, y_predc3))
-print("Precision:",metrics.precision_score(y_test3, y_predc3))
-print("Recall:",metrics.recall_score(y_test3, y_predc3))
-print("F1:",metrics.f1_score(y_test3, y_predc3))
-#Model 4
-clf = svm.SVC()
-clf.fit(X_train4,y_train4)
-y_predc4 = clf.predict(X_test4)
+# print("SVC --------")
+# print("Accuracy:",metrics.accuracy_score(y_test3, y_predc3))
+# print("Precision:",metrics.precision_score(y_test3, y_predc3))
+# print("Recall:",metrics.recall_score(y_test3, y_predc3))
+# print("F1:",metrics.f1_score(y_test3, y_predc3))
+# #Model 4
+# clf = svm.SVC()
+# clf.fit(X_train4,y_train4)
+# y_predc4 = clf.predict(X_test4)
 
-cnf_matrixc4 = metrics.confusion_matrix(y_test4, y_predc4)
-print(cnf_matrixc4)
-sns.heatmap(cnf_matrixc4,annot = True)
-plt.figure()
+# cnf_matrixc4 = metrics.confusion_matrix(y_test4, y_predc4)
+# print(cnf_matrixc4)
+# sns.heatmap(cnf_matrixc4,annot = True)
+# plt.figure()
 
-print("SVC --------")
-print("Accuracy:",metrics.accuracy_score(y_test4, y_predc4))
-print("Precision:",metrics.precision_score(y_test4, y_predc4))
-print("Recall:",metrics.recall_score(y_test4, y_predc4))
-print("F1:",metrics.f1_score(y_test4, y_predc4))
-#Model 5
-clf = svm.SVC()
-clf.fit(X_train5,y_train5)
-y_predc5 = clf.predict(X_test5)
+# print("SVC --------")
+# print("Accuracy:",metrics.accuracy_score(y_test4, y_predc4))
+# print("Precision:",metrics.precision_score(y_test4, y_predc4))
+# print("Recall:",metrics.recall_score(y_test4, y_predc4))
+# print("F1:",metrics.f1_score(y_test4, y_predc4))
+# #Model 5
+# clf = svm.SVC()
+# clf.fit(X_train5,y_train5)
+# y_predc5 = clf.predict(X_test5)
 
-cnf_matrixc5 = metrics.confusion_matrix(y_test5, y_predc5)
-print(cnf_matrixc5)
-sns.heatmap(cnf_matrixc5,annot = True)
-plt.figure()
+# cnf_matrixc5 = metrics.confusion_matrix(y_test5, y_predc5)
+# print(cnf_matrixc5)
+# sns.heatmap(cnf_matrixc5,annot = True)
+# plt.figure()
 
-print("SVC --------")
-print("Accuracy:",metrics.accuracy_score(y_test5, y_predc5))
-print("Precision:",metrics.precision_score(y_test5, y_predc5))
-print("Recall:",metrics.recall_score(y_test5, y_predc5))
-print("F1:",metrics.f1_score(y_test5, y_predc5))
-#Model 6 - SVC
-clf = svm.SVC()
-clf.fit(X_train6,y_train6)
-y_predc6 = clf.predict(X_test6)
+# print("SVC --------")
+# print("Accuracy:",metrics.accuracy_score(y_test5, y_predc5))
+# print("Precision:",metrics.precision_score(y_test5, y_predc5))
+# print("Recall:",metrics.recall_score(y_test5, y_predc5))
+# print("F1:",metrics.f1_score(y_test5, y_predc5))
+# #Model 6 - SVC
+# clf = svm.SVC()
+# clf.fit(X_train6,y_train6)
+# y_predc6 = clf.predict(X_test6)
 
-cnf_matrixc6 = metrics.confusion_matrix(y_test6, y_predc6)
-print(cnf_matrixc6)
-sns.heatmap(cnf_matrixc6,annot = True)
-plt.figure()
+# cnf_matrixc6 = metrics.confusion_matrix(y_test6, y_predc6)
+# print(cnf_matrixc6)
+# sns.heatmap(cnf_matrixc6,annot = True)
+# plt.figure()
 
-print("SVC --------")
-print("Accuracy:",metrics.accuracy_score(y_test6, y_predc6))
-print("Precision:",metrics.precision_score(y_test6, y_predc6))
-print("Recall:",metrics.recall_score(y_test6, y_predc6))
-print("F1:",metrics.f1_score(y_test6, y_predc6))
+# print("SVC --------")
+# print("Accuracy:",metrics.accuracy_score(y_test6, y_predc6))
+# print("Precision:",metrics.precision_score(y_test6, y_predc6))
+# print("Recall:",metrics.recall_score(y_test6, y_predc6))
+# print("F1:",metrics.f1_score(y_test6, y_predc6))
 
-#KNN n = 3
-#Model 1
-#Model 2
-klf = KNeighborsClassifier(n_neighbors=3)
-klf.fit(X_train,y_train)
-y_predk = klf.predict(X_test)
+# #KNN n = 3
+# #Model 1
+# #Model 2
+# klf = KNeighborsClassifier(n_neighbors=3)
+# klf.fit(X_train,y_train)
+# y_predk = klf.predict(X_test)
 
-cnf_matrixk = metrics.confusion_matrix(y_test, y_predk)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test, y_predk)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("KNN --------------")
-print("Accuracy:",metrics.accuracy_score(y_test, y_predk))
-print("Precision:",metrics.precision_score(y_test, y_predk))
-print("Recall:",metrics.recall_score(y_test, y_predk))
-print("F1:",metrics.f1_score(y_test, y_predk))
-#Model 3
-klf = KNeighborsClassifier(n_neighbors=3)
-klf.fit(X_train3,y_train3)
-y_predk3 = klf.predict(X_test3)
+# print("KNN --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test, y_predk))
+# print("Precision:",metrics.precision_score(y_test, y_predk))
+# print("Recall:",metrics.recall_score(y_test, y_predk))
+# print("F1:",metrics.f1_score(y_test, y_predk))
+# #Model 3
+# klf = KNeighborsClassifier(n_neighbors=3)
+# klf.fit(X_train3,y_train3)
+# y_predk3 = klf.predict(X_test3)
 
-cnf_matrixk3 = metrics.confusion_matrix(y_test3, y_predk3)
-print(cnf_matrixk3)
-sns.heatmap(cnf_matrixk3,annot = True)
-plt.figure()
+# cnf_matrixk3 = metrics.confusion_matrix(y_test3, y_predk3)
+# print(cnf_matrixk3)
+# sns.heatmap(cnf_matrixk3,annot = True)
+# plt.figure()
 
-print("KNN --------------")
-print("Accuracy:",metrics.accuracy_score(y_test3, y_predk3))
-print("Precision:",metrics.precision_score(y_test3, y_predk3))
-print("Recall:",metrics.recall_score(y_test3, y_predk3))
-print("F1:",metrics.f1_score(y_test3, y_predk3))
-#Model 4
-klf = KNeighborsClassifier(n_neighbors=3)
-klf.fit(X_train4,y_train4)
-y_predk4 = klf.predict(X_test4)
+# print("KNN --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test3, y_predk3))
+# print("Precision:",metrics.precision_score(y_test3, y_predk3))
+# print("Recall:",metrics.recall_score(y_test3, y_predk3))
+# print("F1:",metrics.f1_score(y_test3, y_predk3))
+# #Model 4
+# klf = KNeighborsClassifier(n_neighbors=3)
+# klf.fit(X_train4,y_train4)
+# y_predk4 = klf.predict(X_test4)
 
-cnf_matrixk4 = metrics.confusion_matrix(y_test4, y_predk4)
-print(cnf_matrixk4)
-sns.heatmap(cnf_matrixk4,annot = True)
-plt.figure()
+# cnf_matrixk4 = metrics.confusion_matrix(y_test4, y_predk4)
+# print(cnf_matrixk4)
+# sns.heatmap(cnf_matrixk4,annot = True)
+# plt.figure()
 
-print("KNN --------------")
-print("Accuracy:",metrics.accuracy_score(y_test4, y_predk4))
-print("Precision:",metrics.precision_score(y_test4, y_predk4))
-print("Recall:",metrics.recall_score(y_test4, y_predk4))
-print("F1:",metrics.f1_score(y_test4, y_predk4))
-#model 5
-klf = KNeighborsClassifier(n_neighbors=3)
-klf.fit(X_train5,y_train5)
-y_predk5 = klf.predict(X_test5)
+# print("KNN --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test4, y_predk4))
+# print("Precision:",metrics.precision_score(y_test4, y_predk4))
+# print("Recall:",metrics.recall_score(y_test4, y_predk4))
+# print("F1:",metrics.f1_score(y_test4, y_predk4))
+# #model 5
+# klf = KNeighborsClassifier(n_neighbors=3)
+# klf.fit(X_train5,y_train5)
+# y_predk5 = klf.predict(X_test5)
 
-cnf_matrixk5 = metrics.confusion_matrix(y_test5, y_predk5)
-print(cnf_matrixk5)
-sns.heatmap(cnf_matrixk5,annot = True)
-plt.figure()
+# cnf_matrixk5 = metrics.confusion_matrix(y_test5, y_predk5)
+# print(cnf_matrixk5)
+# sns.heatmap(cnf_matrixk5,annot = True)
+# plt.figure()
 
-print("KNN --------------")
-print("Accuracy:",metrics.accuracy_score(y_test5, y_predk5))
-print("Precision:",metrics.precision_score(y_test5, y_predk5))
-print("Recall:",metrics.recall_score(y_test5, y_predk5))
-print("F1:",metrics.f1_score(y_test5, y_predk5))
-#model 6
-klf = KNeighborsClassifier(n_neighbors=3)
-klf.fit(X_train6,y_train6)
-y_predk6 = klf.predict(X_test6)
+# print("KNN --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test5, y_predk5))
+# print("Precision:",metrics.precision_score(y_test5, y_predk5))
+# print("Recall:",metrics.recall_score(y_test5, y_predk5))
+# print("F1:",metrics.f1_score(y_test5, y_predk5))
+# #model 6
+# klf = KNeighborsClassifier(n_neighbors=3)
+# klf.fit(X_train6,y_train6)
+# y_predk6 = klf.predict(X_test6)
 
-cnf_matrixk6 = metrics.confusion_matrix(y_test6, y_predk6)
-print(cnf_matrixk6)
-sns.heatmap(cnf_matrixk6,annot = True)
-plt.figure()
+# cnf_matrixk6 = metrics.confusion_matrix(y_test6, y_predk6)
+# print(cnf_matrixk6)
+# sns.heatmap(cnf_matrixk6,annot = True)
+# plt.figure()
 
-print("KNN --------------")
-print("Accuracy:",metrics.accuracy_score(y_test6, y_predk6))
-print("Precision:",metrics.precision_score(y_test6, y_predk6))
-print("Recall:",metrics.recall_score(y_test6, y_predk6))
-print("F1:",metrics.f1_score(y_test6, y_predk6))
+# print("KNN --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test6, y_predk6))
+# print("Precision:",metrics.precision_score(y_test6, y_predk6))
+# print("Recall:",metrics.recall_score(y_test6, y_predk6))
+# print("F1:",metrics.f1_score(y_test6, y_predk6))
 
-#Random forest
-#Model 1
-#Model 2
-rlf = RandomForestClassifier()
-rlf.fit(X_train,y_train)
-y_predr = rlf.predict(X_test)
+# #Random forest
+# #Model 1
+# #Model 2
+# rlf = RandomForestClassifier()
+# rlf.fit(X_train,y_train)
+# y_predr = rlf.predict(X_test)
 
-cnf_matrixk = metrics.confusion_matrix(y_test, y_predr)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test, y_predr)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("Random Forest m2 --------------")
-print("Accuracy:",metrics.accuracy_score(y_test, y_predr))
-print("Precision:",metrics.precision_score(y_test, y_predr))
-print("Recall:",metrics.recall_score(y_test, y_predr))
-print("F1:",metrics.f1_score(y_test, y_predr))
-#Model 3
-rlf.fit(X_train3,y_train3)
-y_predr = rlf.predict(X_test3)
+# print("Random Forest m2 --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test, y_predr))
+# print("Precision:",metrics.precision_score(y_test, y_predr))
+# print("Recall:",metrics.recall_score(y_test, y_predr))
+# print("F1:",metrics.f1_score(y_test, y_predr))
+# #Model 3
+# rlf.fit(X_train3,y_train3)
+# y_predr = rlf.predict(X_test3)
 
-cnf_matrixk = metrics.confusion_matrix(y_test3, y_predr)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test3, y_predr)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("Random Forest m3 --------------")
-print("Accuracy:",metrics.accuracy_score(y_test3, y_predr))
-print("Precision:",metrics.precision_score(y_test3, y_predr))
-print("Recall:",metrics.recall_score(y_test3, y_predr))
-print("F1:",metrics.f1_score(y_test3, y_predr))
-#Model 4
-rlf.fit(X_train4,y_train4)
-y_predr = rlf.predict(X_test4)
+# print("Random Forest m3 --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test3, y_predr))
+# print("Precision:",metrics.precision_score(y_test3, y_predr))
+# print("Recall:",metrics.recall_score(y_test3, y_predr))
+# print("F1:",metrics.f1_score(y_test3, y_predr))
+# #Model 4
+# rlf.fit(X_train4,y_train4)
+# y_predr = rlf.predict(X_test4)
 
-cnf_matrixk = metrics.confusion_matrix(y_test4, y_predr)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test4, y_predr)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("Random Forest m4 --------------")
-print("Accuracy:",metrics.accuracy_score(y_test4, y_predr))
-print("Precision:",metrics.precision_score(y_test4, y_predr))
-print("Recall:",metrics.recall_score(y_test4, y_predr))
-print("F1:",metrics.f1_score(y_test4, y_predr))
-#model 5
-rlf.fit(X_train5,y_train5)
-y_predr = rlf.predict(X_test5)
+# print("Random Forest m4 --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test4, y_predr))
+# print("Precision:",metrics.precision_score(y_test4, y_predr))
+# print("Recall:",metrics.recall_score(y_test4, y_predr))
+# print("F1:",metrics.f1_score(y_test4, y_predr))
+# #model 5
+# rlf.fit(X_train5,y_train5)
+# y_predr = rlf.predict(X_test5)
 
-cnf_matrixk = metrics.confusion_matrix(y_test5, y_predr)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test5, y_predr)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("Random Forest m5 --------------")
-print("Accuracy:",metrics.accuracy_score(y_test5, y_predr))
-print("Precision:",metrics.precision_score(y_test5, y_predr))
-print("Recall:",metrics.recall_score(y_test5, y_predr))
-print("F1:",metrics.f1_score(y_test5, y_predr))
-#model 6
-rlf.fit(X_train6,y_train6)
-y_predr = rlf.predict(X_test6)
+# print("Random Forest m5 --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test5, y_predr))
+# print("Precision:",metrics.precision_score(y_test5, y_predr))
+# print("Recall:",metrics.recall_score(y_test5, y_predr))
+# print("F1:",metrics.f1_score(y_test5, y_predr))
+# #model 6
+# rlf.fit(X_train6,y_train6)
+# y_predr = rlf.predict(X_test6)
 
-cnf_matrixk = metrics.confusion_matrix(y_test6, y_predr)
-print(cnf_matrixk)
-sns.heatmap(cnf_matrixk,annot = True)
-plt.figure()
+# cnf_matrixk = metrics.confusion_matrix(y_test6, y_predr)
+# print(cnf_matrixk)
+# sns.heatmap(cnf_matrixk,annot = True)
+# plt.figure()
 
-print("Random Forest m6 --------------")
-print("Accuracy:",metrics.accuracy_score(y_test6, y_predr))
-print("Precision:",metrics.precision_score(y_test6, y_predr))
-print("Recall:",metrics.recall_score(y_test6, y_predr))
-print("F1:",metrics.f1_score(y_test6, y_predr))
+# print("Random Forest m6 --------------")
+# print("Accuracy:",metrics.accuracy_score(y_test6, y_predr))
+# print("Precision:",metrics.precision_score(y_test6, y_predr))
+# print("Recall:",metrics.recall_score(y_test6, y_predr))
+# print("F1:",metrics.f1_score(y_test6, y_predr))
